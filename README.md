@@ -11,11 +11,11 @@ To verify your certificate run the command below (the ```certifplus/source/serve
 curl -v -X POST  -F image=@[name of the certificate png file]  --cacert [path to the CA certificate] https://localhost:9000/verification
 ```
 
-As an example, this script below is creating a certificate for ```toto``` named ```SecuTIC``` (```verif_command.sh```) :
+As an example, this script below is creating a certificate for ```toto``` named ```SecuTIC``` (script can be found at ```verif_command.sh```) :
 ```
 #!/bin/bash -x
 curl -v -X POST -d 'identite=toto' -d 'intitule_certif=SecuTIC' --cacert ./certifplus/certificates/ecc.ca.cert.pem https://localhost:9000/creation --output image.png
 curl -v -X POST  -F image=@image.png  --cacert ./certifplus/certificates/ecc.ca.cert.pem https://localhost:9000/verification
 ```
 
-You could also check that the false certificate ```image-falsifiee.png``` (where hidden data has been corrupted) is not accepted as a valid certificate (More on this on the ```RAPPORT.pdf```).
+You could also check that the false certificate ```image-falsifiee.png``` (where hidden data has been corrupted) is not accepted as a valid certificate (more on this on the ```RAPPORT.pdf```).
