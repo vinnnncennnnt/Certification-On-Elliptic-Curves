@@ -2,10 +2,14 @@
 
 
 To create a new certificate run the command below (the ```certifplus/source/server.py``` must be running) :
-- ```curl -v -X POST -d 'identite=[author name]' -d 'intitule_certif=[certification name]' --cacert [path to the CA certificate] https://localhost:9000/creation --output [name of the certificate png file]```
+```
+curl -v -X POST -d 'identite=[author name]' -d 'intitule_certif=[certification name]' --cacert [path to the CA certificate] https://localhost:9000/creation --output [name of the certificate png file]
+```
 
 To verify your certificate run the command below (the ```certifplus/source/server.py``` must be running) :
-- ```curl -v -X POST  -F image=@[name of the certificate png file]  --cacert [path to the CA certificate] https://localhost:9000/verification```
+```
+curl -v -X POST  -F image=@[name of the certificate png file]  --cacert [path to the CA certificate] https://localhost:9000/verification
+```
 
 As an example, this script below is creating a certificate for ```toto``` named ```SecuTIC``` (```verif_command.sh```) :
 ```
